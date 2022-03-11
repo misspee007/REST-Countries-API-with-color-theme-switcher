@@ -1,14 +1,15 @@
+localStorage.removeItem("country");
 
 // 1. loop through the array of objects 
-
 // 2. for each object, create a new card element
-// 2.1 create card
+
 const card = document.getElementsByClassName('cards')[0];
 
 function createCard(data) {  
   data.map(i => {
     const link = document.createElement('a');
     link.href = "details.html";
+    link.addEventListener("click", getDetails); 
 
     const flag = document.createElement('div');
     flag.className = 'flag';
@@ -56,10 +57,15 @@ function createCard(data) {
     link.append(flag, cardInfo);
     card.append(link);
 
+    // helper function
+    function getDetails() {
+      console.log(i);
+      localStorage.setItem("country", JSON.stringify(i));
+    }
   })
 }
 
-const getData = async () => {
+async function getData () {
   try {
     const response = await axios.get("https://restcountries.com/v2/all");
     let data = response.data;
