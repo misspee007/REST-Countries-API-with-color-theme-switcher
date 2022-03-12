@@ -12,6 +12,9 @@ document.getElementById("cap").innerHTML = country.capital;
 document.getElementById("domain").innerHTML = country.topLevelDomain;
 document.getElementById("curr").innerHTML = country.currencies[0].name;
 
+// get flag images
+document.getElementById("flag").src = country.flags.svg;
+
 // get languages
 let languages = "";
 country.languages.forEach(i => {
@@ -19,9 +22,10 @@ country.languages.forEach(i => {
 })
 document.getElementById("lang").innerHTML = languages;
 
-// get borders
+// get borders: 
 let borders = document.getElementById("borders");
-country.borders.map(i => {
+  //country.borders returns a country code, make API call using the code to get the actual country name
+country.borders.map(i => {   
   let span = document.createElement("span");
 
   async function getData() {
@@ -37,3 +41,9 @@ country.borders.map(i => {
   getData();
   borders.append(span);
 })
+
+
+
+//      - styling
+//      - search 
+//      - sort

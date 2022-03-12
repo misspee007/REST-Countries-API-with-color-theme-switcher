@@ -11,8 +11,10 @@ function createCard(data) {
     link.href = "details.html";
     link.addEventListener("click", getDetails); 
 
-    const flag = document.createElement('div');
+    const flag = document.createElement('img');
     flag.className = 'flag';
+    flag.src = i.flags.svg;
+    // flag.width = "380px";
 
     const cardInfo = document.createElement('div');
     cardInfo.className = 'card-info';
