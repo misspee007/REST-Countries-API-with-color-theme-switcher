@@ -41,9 +41,3 @@ country.borders.map(i => {
   getData();
   borders.append(span);
 })
-
-
-
-//      - styling
-//      - search 
-//      - sort
