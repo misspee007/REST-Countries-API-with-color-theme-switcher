@@ -1,8 +1,11 @@
-localStorage.removeItem("country");
-
-// 1. loop through the array of objects 
+// Goals:
+// 1. loop through the array of objects (data)
 // 2. for each object, create a new card element
 
+// clear local storage to reset details page.
+localStorage.removeItem("country"); 
+
+// helper functions
 const cards = document.getElementsByClassName('cards')[0];
 
 function createCard(data) {  
@@ -69,13 +72,13 @@ function createCard(data) {
     }
   })
 }
-
 function clearCards() {
   while (cards.firstChild) {
     cards.removeChild(cards.lastChild);
   }
 }
 
+// filter by region
 function handleRegionChange() {
   const region = document.getElementsByClassName('filter-custom')[0].value.toLowerCase();
   const regURL = `https://restcountries.com/v2/region/${region}${region === "america" ? "s" : ""}`;
@@ -83,6 +86,16 @@ function handleRegionChange() {
   getData(regURL);
 }
 
+// search 
+function handleInputChange() {
+  let searchInput = document.getElementById('searchbar').value;
+  searchInput = searchInput.trim().toLowerCase();
+  const searchURL = `https://restcountries.com/v2/name/${searchInput}`;
+  clearCards();
+  getData(searchURL);
+}
+
+// get data for all countries and render in cards
 async function getData (path) {
   try {
     const response = await axios.get(path);
@@ -95,8 +108,3 @@ async function getData (path) {
 }
 const baseURL = "https://restcountries.com/v2/all";
 getData(baseURL);
-
-
-// ToDo
-// - styling
-// - search 
