@@ -12,18 +12,19 @@ function createCard(data) {
   data.map(i => {
     const link = document.createElement('a');
     link.href = "details.html";
-    link.className = 'text-decoration-none';
+    link.className = ' text-decoration-none col ';
     link.id = 'card';
     link.addEventListener("click", getDetails); 
 
     const div = document.createElement('div');
-    div.className = "border-top-0 rounded shadow-sm";
+    div.className = "w-75 bg-white rounded-top h-100";
 
     const flag = document.createElement('img');
-    flag.className = 'flag w-100 border-top rounded';
+    flag.className = 'flag w-100 rounded-top h-50';
     flag.src = i.flags.svg;
 
     const cardInfo = document.createElement('div');
+    cardInfo.className = 'border border-white shadow-sm rounded-bottom  px-4 py-4 h-50';
 
     const title = document.createElement('h2');
     title.className = 'title fw-bold fs-5';
@@ -32,27 +33,30 @@ function createCard(data) {
     const desc = document.createElement('div');
 
     const popWrap = document.createElement('div');
+    popWrap.className = 'd-flex align-items-center';
     const popTxt = document.createElement('h3');
     popTxt.innerHTML = "Population: ";
-    popTxt.className = 'fw-normal fs-6';
+    popTxt.className = 'fw-normal fs-6 mb-0';
     const pop = document.createElement('p');
     pop.innerHTML = i.population;
-    pop.className = 'fs-6 fw-light';;
+    pop.className = 'fs-6 fw-light ms-1 ';
 
     const regWrap = document.createElement('div');
+    regWrap.className = 'd-flex align-items-center';
     const regTxt = document.createElement('h3');
     regTxt.innerHTML="Region: ";
-    regTxt.className = 'fw-normal fs-6';
+    regTxt.className = 'fw-normal fs-6 mb-0';
     const reg = document.createElement('p');
     reg.innerHTML = i.region;
-    reg.className = 'fs-6 fw-light';
+    reg.className = 'fs-6 fw-light ms-1';
 
     const capWrap = document.createElement('div');
+    capWrap.className = 'd-flex align-items-center';
     const capTxt = document.createElement('h3');
     capTxt.innerHTML="Capital: ";
-    capTxt.className = 'fw-normal fs-6';
+    capTxt.className = 'fw-normal fs-6 mb-0';
     const cap = document.createElement('p');
-    cap.className = 'fs-6 fw-light';
+    cap.className = 'fs-6 fw-light ms-1';
     cap.innerHTML = i.capital;
 
     popWrap.append(popTxt, pop);
