@@ -12,9 +12,9 @@
 
     <title>Document</title>
   </head>
-  <body >
-    <div container-fluid>
-      <header class="header-custom border shadow d-flex justify-content-between align-items-center px-3">
+  <body class="bg-secondary">
+    <div class="">
+      <header class="bg-white border border-white shadow-sm d-flex justify-content-between align-items-center px-3 py-4 py-sm-4">
         <h1 class="fs-6 fw-bold m-0">Where in the world?</h1>
         <button class="btn p-0 fw-normal fs-6">
             <svg xmlns="http://www.w3.org/2000/svg" width="13" height="16" fill="currentColor" class="bi bi-moon mb-1 me-1" viewBox="0 0 16 16">
@@ -24,12 +24,12 @@
         </button>
       </header> 
 
-      <main class="container-fluid bg-secondary p-3">
-        <form class="d-flex flex-column fs-6 ">
+      <main class="container p-4 px-sm-0 h-75">
+        <form class="fs-7 row row-cols-sm-2 justify-content-between">
 
-          <input type="text" placeholder="Search for a country..." class="search-custom border shadow-sm rounded py-2 ps-5 text-secondary" id="searchbar" onkeyup="handleInputChange()" name="search" />
+          <input type="text" placeholder="Search for a country..." class="search-custom border border-white shadow-sm rounded mb-4 mb-sm-2 px-5 text-dark col-sm-5 h-50" id="searchbar" onkeyup="handleInputChange()" name="search" />
 
-          <select class="filter-custom py-2 px-3 fw-normal border shadow-sm rounded" onchange="handleRegionChange()">
+          <select class="filter-custom px-3 mt-3 mt-sm-0 mb-4 fw-normal border border-white shadow-sm rounded col-sm-2" onchange="handleRegionChange()">
             <option value="" class="d-none">Filter by Region</option>
             <option value="Africa" class="">Africa</option>
             <option value="America" class="">America</option>
@@ -39,7 +39,7 @@
           </select>
         </form>
 
-        <section class="cards px-4"></section>
+        <section class="cards row row-cols-sm-2 row-cols-lg-4 p-4 px-sm-0 justify-content-center"></section>
       </main>
     </div>
 

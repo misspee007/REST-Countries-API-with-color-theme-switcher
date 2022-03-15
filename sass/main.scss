@@ -1,36 +1,42 @@
 // - Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
 // - Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
 // - Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
 
 $very-dark-blue: hsl(200, 15%, 8%);
 $dark-gray: hsl(0, 0%, 52%);
 $very-light-gray: hsl(0, 0%, 98%);
 
-$primary: #000;
+$primary: $very-dark-blue;
 $secondary: $very-light-gray;
+$dark: $dark-gray;
 
-// $border-radius: 8px;
-
-$font-family-base: 'Nunito Sans';
+$font-family-base: "Nunito Sans";
 $font-weight-normal: 600;
 $font-weight-bold: 800;
 $h5-font-size: 16px;
 $h6-font-size: 14px;
 
+$paragraph-margin-bottom: 0;
+
+$box-shadow-sm: 0 0rem 0.4rem rgb(0 0 0 / 8%);
+
 // Custom classes
-.header-custom {
-  height: 4.5rem;
+.filter-custom,
+.search-custom {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
 }
-.filter-custom{
-  max-width: 60%;
+.search-custom {
+  background: white
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='16' fill='currentColor' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/%3E%3C/svg%3E")
+    no-repeat 9% center;
 }
-.search-custom{
-  background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='16' fill='currentColor' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/%3E%3C/svg%3E") no-repeat 9% center;
-  color: $dark-gray;
+.fs-7 {
+  font-size: 12px;
 }
 
 
 //import bootstrap
-@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
 //antarctica undefined
