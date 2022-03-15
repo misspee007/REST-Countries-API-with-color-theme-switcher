@@ -27,6 +27,7 @@ function createDetailCard(country) {
     //country.borders returns a country code, make API call using the code to get the actual country name
   country.borders.map(i => {   
     let span = document.createElement("span");
+    span.className = 'btn flex-nowrap fw-light fs-6 border col-4 mb-2 mt-1';
 
     async function getData() {
       try {
