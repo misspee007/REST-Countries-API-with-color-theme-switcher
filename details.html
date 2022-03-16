@@ -17,10 +17,10 @@
   </head>
   <body class="pb-5">
     <header
-      class="bg-white border border-white shadow-sm d-flex justify-content-between align-items-center px-3 py-4 py-sm-4"
+      class="bg-white border border-white shadow-sm d-flex justify-content-between align-items-center px-3 px-lg-5 py-4 py-sm-3"
     >
-      <h1 class="fs-6 fw-bold m-0">Where in the world?</h1>
-      <button class="btn p-0 fw-normal fs-7">
+      <a href="index.html" class="text-decoration-none"><h1 class="fs-6 fw-bold m-0 ms-lg-5">Where in the world?</h1></a>
+      <button class="btn p-0 me-lg-5 fw-normal fs-7">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="13"
@@ -37,12 +37,12 @@
       </button>
     </header>
 
-    <main class="px-4 pt-4">
+    <main class="px-4 px-lg-5 pt-4 pt-lg-5">
       <section class="top-section">
         <button
           type="button"
           onclick="history.back()"
-          class="btn border shadow-sm rounded px-4 fs-6"
+          class="btn border shadow-sm rounded px-4 fs-6 my-lg-3 ms-lg-5"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -61,17 +61,34 @@
         </button>
       </section>
 
-      <section class="bottom-section d-flex flex-column">
-        <img src="" alt="country's flag" id="flag" height="190rem" class="clear mt-5 mb-4" />
+      <section
+        class="bottom-section d-flex flex-column flex-lg-row justify-content-between"
+      >
+        <picture>
+          <source
+            media="(min-width:992px)"
+            srcset=""
+            id="flag-lg"
+            height="350rem"
+          />
+          <img
+            src=""
+            height="190rem"
+            alt="country's flag"
+            id="flag"
+            class="clear mt-5 mb-4 ms-lg-5 w-100"
+          />
+        </picture>
+        <div class="card-info w-50 py-lg-5 align-items-center">
+          <p class="title clear fs-4 fw-bold card-title mt-lg-4"></p>
 
-        <div class="card-info">
-          <p class="title clear fs-4 fw-bold card-title"></p>
-
-          <div class="desc fs-6">
-            <div class="desc-top d-flex flex-column ">
-              <div class="desc-left mb-4">
+          <div class="desc fs-6 mb-lg-4">
+            <div
+              class="desc-top d-flex flex-column flex-lg-row justify-content-lg-start"
+            >
+              <div class="desc-left mb-4 me-lg-5">
                 <div class="d-flex mt-1">
-                  <b class="fw-normal ">Native Name: </b>
+                  <b class="fw-normal">Native Name: </b>
                   <p id="native-name" class="clear fw-light ms-1"></p>
                 </div>
 
@@ -96,7 +113,7 @@
                 </div>
               </div>
 
-              <div class="desc-rt mb-4 ">
+              <div class="desc-rt mb-4 ms-lg-5">
                 <div class="d-flex mt-1">
                   <b class="fw-normal">Top Level Domain: </b>
                   <p id="domain" class="clear fw-light ms-1"></p>
@@ -115,10 +132,10 @@
             </div>
 
             <div class="desc-btm d-flex flex-column">
-              <b class="fw-normal mb-2 mt-1">Border Countries: </b>
+              <b class="fw-normal mb-2 mt-1 mt-lg-4">Border Countries: </b>
               <span
                 id="borders"
-                class="clear fw-light btn-toolbar justify-content-between"
+                class="clear fw-light btn-toolbar justify-content-between justify-content-lg-start"
               ></span>
             </div>
           </div>
