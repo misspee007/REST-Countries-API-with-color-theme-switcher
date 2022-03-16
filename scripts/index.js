@@ -12,15 +12,15 @@ function createCard(data) {
   data.map(i => {
     const link = document.createElement('a');
     link.href = "details.html";
-    link.className = ' text-decoration-none col ';
+    link.className = ' text-decoration-none rounded-top col-sm-6 col-lg-2 m-lg-4 mb-5';
     link.id = 'card';
     link.addEventListener("click", getDetails); 
 
     const div = document.createElement('div');
-    div.className = "w-75 bg-white rounded-top h-100";
+    div.className = "bg-white rounded-top h-100";
 
     const flag = document.createElement('img');
-    flag.className = 'flag w-100 rounded-top h-50';
+    flag.className = 'flag w-100 h-50 rounded-top';
     flag.src = i.flags.svg;
 
     const cardInfo = document.createElement('div');

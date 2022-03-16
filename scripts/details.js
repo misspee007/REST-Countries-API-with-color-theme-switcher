@@ -14,6 +14,7 @@ function createDetailCard(country) {
 
   // get flag images
   document.getElementById("flag").src = country.flags.svg;
+  document.getElementById("flag-lg").srcset = country.flags.svg;
 
   // get languages
   let languages = "";
@@ -27,7 +28,7 @@ function createDetailCard(country) {
     //country.borders returns a country code, make API call using the code to get the actual country name
   country.borders.map(i => {   
     let span = document.createElement("span");
-    span.className = 'btn flex-nowrap fw-light fs-6 border col-4 mb-2 mt-1';
+    span.className = 'btn flex-nowrap fw-light fs-6 border col-4 col-lg-2 mb-2 mt-1 mb-lg-0 me-lg-1';
 
     async function getData() {
       try {
