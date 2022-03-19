@@ -3,7 +3,8 @@
 // 2. for each object, create a new card element
 
 // clear local storage to reset details page.
-localStorage.removeItem("country"); 
+localStorage.removeItem("country");
+localStorage.setItem("theme", "light");
 
 // helper functions
 const cards = document.getElementsByClassName('cards')[0];
@@ -17,14 +18,14 @@ function createCard(data) {
     link.addEventListener("click", getDetails); 
 
     const div = document.createElement('div');
-    div.className = "bg-white rounded-top h-100";
+    div.className = "card-wrap bg-white rounded-top h-100";
 
     const flag = document.createElement('img');
     flag.className = 'flag w-100 h-50 rounded-top';
     flag.src = i.flags.svg;
 
     const cardInfo = document.createElement('div');
-    cardInfo.className = 'border border-white shadow-sm rounded-bottom  px-4 py-4 h-50';
+    cardInfo.className = 'shadow-sm rounded-bottom  px-4 py-4 h-50';
 
     const title = document.createElement('h2');
     title.className = 'title fw-bold fs-5';
@@ -112,3 +113,41 @@ async function getData (path) {
 }
 const baseURL = "https://restcountries.com/v2/all";
 getData(baseURL);
+
+// Dark mode  
+function toggleBgColor(theme, btn) {
+  if (theme === "light") {
+    document.getElementById('body').classList.remove("bg-secondary", "text-white");
+    document.getElementById("header").classList.remove("bg-white");
+    document.getElementById("header").classList.add("dark-blue");
+    document.getElementById("h1").classList.add("text-white");
+    btn.classList.add("text-white");
+    document.getElementById("searchbar").classList.replace("text-dark", "text-white");
+    document.getElementById("searchbar").classList.add("dark-blue");
+    document.getElementById("filter").classList.add("dark-blue", "text-white");
+
+    // document.getElementsByClassName('card-wrap').forEach(element => {
+    //   element.classList.replace("bg-white", "dark-elements");
+    // });
+  }
+  if (theme === "dark"){
+    document.getElementById("header").classList.add("bg-white");
+    document.getElementById('body').classList.add("bg-secondary", "text-white");
+    document.getElementById("h1").classList.remove("text-white");
+    btn.classList.remove("text-white");
+    document.getElementById("searchbar").classList.remove("dark-blue");
+    document.getElementById("filter").classList.remove("dark-blue", "text-white");
+  }
+}
+function toggleBtn(theme, btn) {
+  btn.innerText = `${theme === "light" ? "Light Mode" : "Dark Mode"}`;
+}
+
+let btn = document.getElementById("dark-mode");
+btn.addEventListener("click", toggleDarkMode);
+function toggleDarkMode() {
+  let theme = localStorage.getItem("theme");
+  toggleBgColor(theme, btn);
+  toggleBtn(theme, btn);
+  localStorage.setItem("theme", `${theme === "light" ? "dark" : "light"}`);
+}
