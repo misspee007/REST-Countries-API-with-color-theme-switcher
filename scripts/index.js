@@ -116,6 +116,8 @@ getData(baseURL);
 
 // Dark mode  
 function toggleBgColor(theme, btn) {
+  let dCard = document.querySelectorAll('.card-wrap');
+
   if (theme === "light") {
     document.getElementById('body').classList.remove("bg-secondary", "text-white");
     document.getElementById("header").classList.remove("bg-white");
@@ -126,9 +128,9 @@ function toggleBgColor(theme, btn) {
     document.getElementById("searchbar").classList.add("dark-blue");
     document.getElementById("filter").classList.add("dark-blue", "text-white");
 
-    // document.getElementsByClassName('card-wrap').forEach(element => {
-    //   element.classList.replace("bg-white", "dark-elements");
-    // });
+    dCard.forEach(i => {
+      i.classList.replace("bg-white", "dark-blue");
+    })
   }
   if (theme === "dark"){
     document.getElementById("header").classList.add("bg-white");
@@ -137,10 +139,20 @@ function toggleBgColor(theme, btn) {
     btn.classList.remove("text-white");
     document.getElementById("searchbar").classList.remove("dark-blue");
     document.getElementById("filter").classList.remove("dark-blue", "text-white");
+    dCard.forEach(i => {
+      i.classList.replace("dark-blue", "bg-white");
+    })
   }
 }
-function toggleBtn(theme, btn) {
-  btn.innerText = `${theme === "light" ? "Light Mode" : "Dark Mode"}`;
+function toggleBtn(theme) {
+  if (theme === "light") {
+    document.getElementById("icon-lt").classList.replace("bi-moon", "bi-brightness-low");
+    document.getElementById("btn-txt").innerHTML = "Light Mode";
+  }
+  if (theme === "dark"){
+    document.getElementById("icon-lt").classList.replace("bi-brightness-low", "bi-moon");
+    document.getElementById("btn-txt").innerHTML = "Dark Mode";
+  }
 }
 
 let btn = document.getElementById("dark-mode");
@@ -148,6 +160,6 @@ btn.addEventListener("click", toggleDarkMode);
 function toggleDarkMode() {
   let theme = localStorage.getItem("theme");
   toggleBgColor(theme, btn);
-  toggleBtn(theme, btn);
+  toggleBtn(theme);
   localStorage.setItem("theme", `${theme === "light" ? "dark" : "light"}`);
 }
