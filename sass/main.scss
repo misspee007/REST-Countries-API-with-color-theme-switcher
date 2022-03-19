@@ -1,15 +1,25 @@
-// - Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
-// - Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
-// - Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
+// - Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%)
+//- Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%)
+//- Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
+//- Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
+//- Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
+//- White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%)
+
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
 
+// light mode
 $very-dark-blue: hsl(200, 15%, 8%);
 $dark-gray: hsl(0, 0%, 52%);
 $very-light-gray: hsl(0, 0%, 98%);
+// dark mode
+$dark-blue: hsl(209, 23%, 22%);
+$very-dark-blue: hsl(207, 26%, 17%);
 
 $primary: $very-dark-blue;
 $secondary: $very-light-gray;
 $dark: $dark-gray;
+
+$body-bg: $very-dark-blue;
 
 $font-family-base: "Nunito Sans";
 $font-weight-normal: 600;
@@ -19,7 +29,7 @@ $h6-font-size: 14px;
 
 $paragraph-margin-bottom: 0;
 
-$box-shadow-sm: 0 0rem 0.4rem rgb(0 0 0 / 8%);
+// $box-shadow-sm: 0 0rem 0.4rem rgb(0 0 0 / 8%);
 
 // Custom classes
 .filter-custom,
@@ -34,6 +44,10 @@ $box-shadow-sm: 0 0rem 0.4rem rgb(0 0 0 / 8%);
 }
 .fs-7 {
   font-size: 12px;
+}
+.dark-blue{
+  background: $dark-blue;
+  color: #ffffff;
 }
 
 //import bootstrap
