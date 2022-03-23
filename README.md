@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [#]()
-- Live Site URL: [https://misspee007.github.io/REST-Countries-API-with-color-theme-switcher/](https://misspee007.github.io/REST-Countries-API-with-color-theme-switcher/)
+- Live Site URL: [https://cozy-sherbet-79dd20.netlify.app/](https://cozy-sherbet-79dd20.netlify.app/)
 
 ## My process
 
