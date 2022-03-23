@@ -114,7 +114,7 @@ async function getData (path) {
 const baseURL = "https://restcountries.com/v2/all";
 getData(baseURL);
 
-// Dark mode  
+// Dark mode 
 function toggleBgColor(theme, btn) {
   let dCard = document.querySelectorAll('.card-wrap');
 
